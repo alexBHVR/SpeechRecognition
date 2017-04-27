@@ -46,9 +46,12 @@ public class MainActivity extends Activity {
      */
     private void promptSpeechInput() {
         Intent intent = new Intent(RecognizerIntent.ACTION_RECOGNIZE_SPEECH);
+
         intent.putExtra(RecognizerIntent.EXTRA_LANGUAGE_MODEL,
                 RecognizerIntent.LANGUAGE_MODEL_FREE_FORM);
-        intent.putExtra(RecognizerIntent.EXTRA_LANGUAGE, Locale.getDefault());
+
+        intent.putExtra(RecognizerIntent.EXTRA_LANGUAGE, getResources().getConfiguration().locale); //Listens for phones default language
+//        intent.putExtra(RecognizerIntent.EXTRA_LANGUAGE, "en-US");
         intent.putExtra(RecognizerIntent.EXTRA_PROMPT,
                 getString(R.string.speech_prompt));
         try {
@@ -78,5 +81,10 @@ public class MainActivity extends Activity {
                 break;
             }
         }
+    }
+
+    public void noDialogActivity(View view) {
+        Intent i = new Intent(getApplicationContext(), Android_Speech_Recognizer.class);
+        startActivity(i);
     }
 }

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="edu.utep.cs.cs4330.speechrecognition.MainActivity">
+    tools:context="edu.utep.cs.cs4330.speechrecognition.Android_Speech_Recognizer">
 
 
     <TextView
@@ -32,6 +32,7 @@
             android:layout_height="match_parent"
             android:adjustViewBounds="true"
             android:background="@drawable/button_background"
+            android:onClick="startListening"
             android:scaleType="fitCenter"
             android:src="@drawable/ic_mic_black_24px" />
 
@@ -39,17 +40,11 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="25dp"
             android:layout_marginTop="10dp"
-            android:text="@string/tap_on_mic"
+            android:text="Presiona el boton \n      para hablar"
             android:textSize="25dp"
             android:textStyle="normal" />
 
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:onClick="noDialogActivity"
-            android:text="Next Example" />
-    </LinearLayout>
 
+    </LinearLayout>
 </RelativeLayout>
